@@ -48,3 +48,4 @@ We use `..` this as an argument in `cd` command which is used to move to the par
 
 
 <img width="347" alt="cd" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/01560d02-522d-4823-a80a-58358d54b6d7">
+
