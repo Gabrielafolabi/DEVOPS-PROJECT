@@ -55,3 +55,14 @@ This Cat(concatenate) command reads data from the file and gives its content as 
 
 <img width="356" alt="cat" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/c4087cb5-e72b-461a-8ffa-712deb5721da">
 
+
+### 6. cp Command:
+The cp command is used to copy files or directories from one location to another. When copying the file, specify the soure of the file or directories you want to
+, Also the destination or location you want to copy the file to.
+
+see below example: I am copying "Learning_Linux" file from Desktop to "DevOps_Folder/AYotemi" 
+
+
+
+<img width="362" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/4987297d-db39-48e2-a4c8-a882a011803c">
+
