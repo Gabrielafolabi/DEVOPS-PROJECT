@@ -112,7 +112,7 @@ This command returns the system hostname, like it is used below:
 
 ### 12. nano, vi , jed  command:
 
-This allow users to edit files in a text editor. nano and vi comes with the operating system. jed has to be installed.
+These allow users to edit files in a text editor. nano and vi come with the operating system. jed has to be installed.
 the screenshot below shows the file named "helloworld". This file is opened and ready to be edited.
 
 
