@@ -67,7 +67,7 @@ see below example: I am copying "Learning_Linux" file from Desktop to "DevOps_Fo
 <img width="362" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/4987297d-db39-48e2-a4c8-a882a011803c">
 
 
-###7. du command:
+### 7. du command:
 Show directory or file  space usage.
 
 <img width="274" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/f6c9f8d6-5f93-47dc-a750-97c22b87d943">
@@ -101,6 +101,39 @@ Here, i have compressed the file "Learning_Linux"...
 Below is to unzip the file:
 
 <img width="403" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/df2a84b2-b383-41d6-aed8-30a293209ee7">
+
+
+### 11. hostname command:
+This command returns the system hostname, like it is used below:
+
+
+<img width="326" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/f1ec2335-035b-4b99-b649-1e2d2e44dbd9">
+
+
+### 12. nano, vi , jed  command:
+
+This allow users to edit files in a text editor. nano and vi comes with the operating system. jed has to be installed.
+the screenshot below shows the file named "helloworld". This file is opened and ready to be edited.
+
+
+
+<img width="398" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/dfdc4fdd-8a64-4925-81ba-48b8784865d5">
+
+### 13. su command:
+
+This is switch user command. This allow you run a command as a different user. As seen below, I switched from # vboxuser to # root user 
+
+
+
+<img width="320" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/63ce11dd-0753-4e6e-ae19-de56f375ed62">
+
+
+### 14 history command:
+In history command, the system will list up to 500 commands previously executed and allow you to re-use them without re-entering . Only users with sudo privileges can execute this command.
+
+
+
+<img width="278" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/32e25f5d-f0ba-4966-912c-9b87b000776e">
 
 
 
