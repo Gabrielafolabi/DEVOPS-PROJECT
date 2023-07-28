@@ -66,3 +66,41 @@ see below example: I am copying "Learning_Linux" file from Desktop to "DevOps_Fo
 
 <img width="362" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/4987297d-db39-48e2-a4c8-a882a011803c">
 
+
+###7. du command:
+Show directory or file  space usage.
+
+<img width="274" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/f6c9f8d6-5f93-47dc-a750-97c22b87d943">
+
+### 8. head command:
+Output the first 10 lines of the file.  Here , my file is name "Learning_Linux".
+
+
+
+<img width="395" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/b803dcd7-7c9a-4e90-82a8-9f84fb04b763">
+
+
+
+
+### 9. tail command:
+Output the last 10 lines of the file. Here , my file is name "Learning_Linux"
+
+
+
+<img width="398" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/811d42c3-9f91-40de-8384-79ca7b562692">
+
+
+### 10. zip command:
+This command is used to compress file and rename it into zip file. Also used for archiving files and directory and then reducing disk usage.
+Here, i have compressed the file "Learning_Linux"... 
+
+
+<img width="359" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/68d6bcc2-1dee-4570-a7d3-a45480fe8cd5">
+
+
+Below is to unzip the file:
+
+<img width="403" alt="image" src="https://github.com/gallant001/DEVOPS-PROJECT/assets/35296784/df2a84b2-b383-41d6-aed8-30a293209ee7">
+
+
+
