@@ -1,1 +1,8 @@
+#GIT 
 
+This document will show basic collection of tasks that is commonly done on GIT. 
+GIT is a powerful version control system widely used in software development. It is a distributed version control system. 
+It might interest you to know that GIT essentially help to solve the problem of sharing source code efficiently and also keep track of any changes done on the 
+source code.
+Before Git there are other technologies  e.g SVN
+SVN solves the problem, but poses a lot challenge. In SVN , there exist a central repository 
