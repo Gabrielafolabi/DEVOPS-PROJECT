@@ -5,4 +5,14 @@ GIT is a powerful version control system widely used in software development. It
 It might interest you to know that GIT essentially help to solve the problem of sharing source code efficiently and also keep track of any changes done on the 
 source code.
 Before Git there are other technologies  e.g SVN
-SVN solves the problem, but poses a lot challenge. In SVN , there exist a central repository 
+SVN solves the problem, but poses a lot challenge. In SVN , there exist a central repository which is a major draw back. which makes it difficult for developers to collaborate because changes can only be made one at a time.
+However, GIT adopted a different approach by allowing developers to make their own copy of the central repository. That is why it reffered to as a Distributed Version Control System.
+Below are some of the actions done on GIT:
+
+####Initiaizing a Git Repository
+- Open the terminal on your computer, in this case (git bash)
+- create a working directory on your terminal with command  (mmkdir DevOps)
+- change in to the newly created directory above with the command ( cd DevOps)
+- Then, while your are in the folder run the command (git init) ...this command initialize the Git.
+
+![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/71330bea-a710-4e77-89fd-fec07a66086b)
