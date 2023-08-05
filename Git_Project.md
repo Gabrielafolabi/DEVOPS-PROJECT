@@ -1,4 +1,4 @@
-# GIT 
+# *GIT* 
 
 This document will show basic collection of tasks that is commonly done on GIT. 
 GIT is a powerful version control system widely used in software development. It is a distributed version control system. 
@@ -9,7 +9,7 @@ SVN solves the problem, but poses a lot challenge. In SVN , there exist a centra
 However, GIT adopted a different approach by allowing developers to make their own copy of the central repository. That is why it reffered to as a Distributed Version Control System.
 Below are some of the actions done on GIT:
 
-## Initiaizing a Git Repository
+## *Initiaizing a Git Repository*
 - Open the terminal on your computer, in this case (git bash)
 - create a working directory on your terminal with command  (mmkdir DevOps)
 - change in to the newly created directory above with the command ( cd DevOps)
@@ -18,7 +18,7 @@ Below are some of the actions done on GIT:
 ![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/71330bea-a710-4e77-89fd-fec07a66086b)
 
 
-## Making a Commit
+## *Making a Commit*
 Commit is saving the changes you have made to your file. When you make a commit, git takes a snapshot of the current state of your repository and saves a copy in the .git folder inside your working directory.
 
 - Inside the new directory you created, create a file index.txt using the command ( touch index.txt)
@@ -28,7 +28,7 @@ Commit is saving the changes you have made to your file. When you make a commit,
 
  ![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/e3690c5f-e3bb-403e-b0c2-efbb7a52bdfb)
 
-## Working with Branches
+## *Working with Branches*
 Git branch allows you to create a different copy of your source code. In your new branch you can make changes as you please. Your change is independent on what is in the main copy.
 Git branch helps you  to develop new features of your application without interfering with the main. It is an important tool for collaboration within remote team. 
 
@@ -65,6 +65,15 @@ Git branch helps you  to develop new features of your application without interf
 - To delete  a branch , use the command **git branch -d backup**
 
 ![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/30c8dc86-a1bb-407a-b05d-94b7f776eb4b)
+
+
+
+## *Cloning Remote Git Repository*
+The Git clone command helps you make a copy of the remote repository on your local machine. It just like downloading remote repository in to your local machine.
+
+use the command git clone  (link  to your local repository)
+
+![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/762d6b79-e57f-4cc1-bdd8-03c53aca2a36)
 
   
 
