@@ -14,3 +14,20 @@ Step 1: Get account registered on AWS. Select your prefered region and launch a 
 check this link to set up your AWS account [How to set up AWS account](https://www.youtube.com/watch?v=xxKuB9kJoYM&list=PLtPuNR8I4TvkwU7Zu0l0G_uwtSUXLckvh&index=6)
 
 Also check here on [how to launch EC2 instance](https://www.youtube.com/watch?v=xxKuB9kJoYM&list=PLtPuNR8I4TvkwU7Zu0l0G_uwtSUXLckvh&index=7)
+In the process of launching your EC2, please save your PEM file securely and do not share with anyone. You will not be able to connect to your server again, if you lose it.
+
+PEM file , is a private key you downloaded from while provisioning the server. It is a PEM file format. 
+We are going to use this key to connect to the EC2 instance via ssh.
+You use a terminal tool, it can be WSL for windows, on macbook terminal is already installed by default... I will be using gitBash on windows, which i installed already.
+
+Then on your terminal change directory to the directory where the PEM file is downloaded. usually in the download folder for me.
+
+cd /Downloads
+
+then,
+ssh -i <private-key-name>.pem ubuntu@<Public-IP-address>
+
+
+
+
+
