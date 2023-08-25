@@ -11,4 +11,6 @@ There are different stacks that makes it possible to build websits and web appli
 
 Step 1: Get account registered on AWS. Select your prefered region and launch a new EC2 instance of t2.micro family with ubuntu server (The latest server version)
 
+check this link to set up your AWS account [How to set up AWS account](https://www.youtube.com/watch?v=xxKuB9kJoYM&list=PLtPuNR8I4TvkwU7Zu0l0G_uwtSUXLckvh&index=6)
 
+Also check here on [how to launch EC2 instance](https://www.youtube.com/watch?v=xxKuB9kJoYM&list=PLtPuNR8I4TvkwU7Zu0l0G_uwtSUXLckvh&index=7)
