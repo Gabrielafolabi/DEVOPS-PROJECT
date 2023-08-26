@@ -23,25 +23,51 @@ You use a terminal tool, it can be WSL for windows, on macbook terminal is alrea
 
 Then on your terminal change directory to the directory where the PEM file is downloaded. usually in the download folder for me.
 
-* *cd /Downloads*
+* `*cd /Downloads*`
 
 then,
 
-* ssh -i private-key-name.pem ubuntu@Public-IP-address
+* `ssh -i private-key-name.pem ubuntu@Public-IP-address`
 
 Note: that the name you saved or given your private key, should replace "private-key-name" ...also the public address of your launched EC2 should replace "Public-IP-address"
 
 There's a likelyhood of getting an error tagged "Bad permission"...then change permission for the private  key  file (.PEM)
 
-* sudo chmod 0400 <private-key-name>.pem
+* `sudo chmod 0400 <private-key-name>.pem`
   then, run the command again
 
-* ssh -i private-key-name.pem ubuntu@Public-IP-address
+* `ssh -i private-key-name.pem ubuntu@Public-IP-address`
 
 Kudos, we have now successfully created linux server on cloud.
 
 
-![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/c2bf5f14-7f9b-450b-a69d-3c03e5b89c4f)
+### *Step 2*: 
+Installing Apache and Updating the Firewall. 
+Apache is an open-source web server that forms the second layer of the LAMP stack. The Apache module stores website files and exchanges information with a browser using HTTP, an internet protocol for transferring website information in plain text. For example, when a browser requests a webpage, the Apache HTTP server does the following:
+- Receives the request
+- Processes the request and finds the required page file 
+- Sends the relevant information back to the browser
+
+Install Apache using ubuntu package manager "apt":
+
+#update a list of packages in package manager
+
+* `$ sudo apt update`
+
+#run apache2 package installation
+
+* `$ sudo apt install apache2`
+
+So, to verufy that apache2 is running as a service on the OS, run the command:
+
+* `$ sudo systemctl status apache2`
+
+
+
+
+
+
+
 
 
 
