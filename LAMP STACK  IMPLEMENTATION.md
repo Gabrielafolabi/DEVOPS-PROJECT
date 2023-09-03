@@ -117,7 +117,25 @@ When you are done, you can test your log in with the command below:
 
 
 ### Step 4: Installing  PHP
-Right noe we have Apache installed to serve your content and MySQL installed to store and manage your data
+Right now, we have Apache installed to serve your content and MySQL installed to store and manage your data. 
+PHP is the component of our setup that will process code to display dynamic content to the end user.
+The following commands below is used to install PHP package:
+
+* `php-mysql`
+  This is a php module that allows PHP to communicate with mysql based databases.
+
+* `libapache2-mod-php`
+  This command ebable apache to handle PHP files.
+
+note that core PHP will automatically be installed as dependencies.
+
+Alternatively, to install the three (3) packages at once, use the command below:
+
+* `sudo apt install php libapache2-mod-php php-mysql`
+
+To confirm the version of the PHP installed use the command:
+
+* `php-v`
 
 
 
