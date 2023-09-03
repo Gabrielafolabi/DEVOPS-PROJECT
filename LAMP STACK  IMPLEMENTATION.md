@@ -137,6 +137,16 @@ To confirm the version of the PHP installed use the command:
 
 * `php-v`
 
+You will see the output below:
+
+PHP 7.4.3 (cli) (built: Oct  6 2020 15:47:56) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+
+
+### *At this point , your lamp stack is completely installled and in operation.*
+
+
 
 
 
