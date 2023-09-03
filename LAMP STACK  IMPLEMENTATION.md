@@ -58,9 +58,26 @@ Install Apache using ubuntu package manager "apt":
 
 * `$ sudo apt install apache2`
 
-So, to verufy that apache2 is running as a service on the OS, run the command:
+So, to verify that apache2 is running as a service on the OS, run the command:
 
 * `$ sudo systemctl status apache2`
+
+  So, therefore, note that before we can receive any traffic on our server, we have to enable TCP port 80. This is done by adding another inbound rule.
+  The TCP port 22 already existing is to enable SSH, this help us to connect to the Virtual server...
+
+  Note that web browser by default listen to TCP port 80
+
+  So, the commands below checks if you can access your web server
+
+   
+* `$ curl http://localhost:80`
+or
+* `$ curl http://127.0.0.1:80`
+
+  The commands above do the same thing. Curl command is used to request the HTTP Apache server on pot 80, using the DNS name . The scond command does the same thing but uses the IP address. Also note that, if you dont specify the port number 80, you will still get the same result. This is because, web browser listen to port 80 by default.
+  This is subject to change , depending on your configuration.
+
+  
 
 
 
