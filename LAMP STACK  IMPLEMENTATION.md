@@ -77,6 +77,58 @@ or
   The commands above do the same thing. Curl command is used to request the HTTP Apache server on pot 80, using the DNS name . The scond command does the same thing but uses the IP address. Also note that, if you dont specify the port number 80, you will still get the same result. This is because, web browser listen to port 80 by default.
   This is subject to change , depending on your configuration.
 
+
+  ### Step 2: Installinng MySQL
+  Alright, now that web server apache has been  installed, then we install a Database Management System (DBMS). This is to be able to store and manage data for your site in a relational database. The MySQL  is the relational DBMS used mostly  in PHP environment.
+
+  To install mysql, use the command below:
+  * `sudo apt install mysql-server`
+ when prompted, confirm installation by typing y and then enter.
+
+After installation, log in to mysql environment using the command below:
+
+* `sudo mysql`
+This will connect to the MySQL Server, as the administrative root user, which is inferred to as sudo.
+you should see the output below:
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.22-0ubuntu0.20.04.3 (Ubuntu)
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective`
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.`
+
+mysql>
+
+
+You can start the interactive script by running:
+* `$ sudo mysql_secure_installation`
+This will ask you to configure the `VALIDATE PASSWORD PLUGIN`
+you should always strong , unique password for database security.
+
+When you are done, you can test your log in with the command below:
+
+`$ sudo mysql -p`
+
+
+### Step 3: Installing  PHP
+
+
+
+
+
+
+
+
+
+
+
+
   
 
 
