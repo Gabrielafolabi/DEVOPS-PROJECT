@@ -41,7 +41,7 @@ There's a likelyhood of getting an error tagged "Bad permission"...then change p
 Kudos, we have now successfully created linux server on cloud.
 
 
-### *Step 2*: 
+### *Step 3*: 
 Installing Apache and Updating the Firewall. 
 Apache is an open-source web server that forms the second layer of the LAMP stack. The Apache module stores website files and exchanges information with a browser using HTTP, an internet protocol for transferring website information in plain text. For example, when a browser requests a webpage, the Apache HTTP server does the following:
 - Receives the request
@@ -116,7 +116,8 @@ When you are done, you can test your log in with the command below:
 `$ sudo mysql -p`
 
 
-### Step 3: Installing  PHP
+### Step 4: Installing  PHP
+Right noe we have Apache installed to serve your content and MySQL installed to store and manage your data
 
 
 
