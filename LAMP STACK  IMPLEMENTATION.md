@@ -184,6 +184,7 @@ command:
 paste the below:
 
 <VirtualHost *:80>
+
     ServerName projectlamp
     
     ServerAlias www.projectlamp 
@@ -195,6 +196,7 @@ paste the below:
     ErrorLog ${APACHE_LOG_DIR}/error.log
     
     CustomLog ${APACHE_LOG_DIR}/access.log combined
+    
 </VirtualHost>
 
 * to show the new files in the site-available directory, use the command:
