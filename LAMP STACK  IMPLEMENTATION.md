@@ -146,7 +146,33 @@ Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
 ### *At this point , your lamp stack is completely installled and in operation.*
 
+## Enable PHP on the Website
+Note that a file named index.html will usually take precedence over index.php in the directoryindex setting on apache. This can be change by edit the file 
+etc/apache2/mods-eanbled/dir.conf , and then change the order in which the index.php file is listed.
 
+command:
+* `sudo vim /etc/apache2/mods-eanbled/dir.conf`
+
+<IfModule mod_dir.c>
+        #Change this:
+        #DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+        #To this:
+        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+
+you need to save , close the file and then reload apache for the change to take effect.
+command:
+* `sudo systemctl reload apache2`
+
+  * Createing a PHP script: This is to test that PHP is correctly installed and configured on my server.
+  * Create a file index.php and then in the file , write a simple php program.
+    command:
+  * `sudo vim /var/www/projectlamp/index.php`
+  * valid php code e.g
+    `<? php
+    phpinfo();`
+
+    
 
 
 
