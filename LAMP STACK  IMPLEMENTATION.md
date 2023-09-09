@@ -195,8 +195,7 @@ paste the below:
     
     ErrorLog ${APACHE_LOG_DIR}/error.log
     
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-    
+    CustomLog ${APACHE_LOG_DIR}/access.log combined  
 </VirtualHost>
 
 * to show the new files in the site-available directory, use the command:
