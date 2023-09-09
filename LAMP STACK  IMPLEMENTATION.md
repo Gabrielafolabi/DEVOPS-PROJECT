@@ -200,24 +200,39 @@ paste the below:
 
 * to show the new files in the site-available directory, use the command:
   `$ sudo ls /etc/apache2/sites-available`
+  
 000-default.conf  default-ssl.conf  projectlamp.conf
 * To enabel the new virtual host:
+  
   `$ sudo a2ensite projectlamp`
+  
 * To dissable apche default website:
+  
   `$ sudo a2dissite 000-default`
-*To make sure configuration file doesnt have syntax error:
+  
+*To make sure configuration file doesnt have syntax error:\
+
 `$ sudo systemctl reload apache2`
+
 * Then reload Apache for changes to take effect:
+  
   `$ sudo systemctl reload apache2`
 
 Congratulationss!!!...
 Our new website is now active, but the web root /var/www/projectlamp is empty. Therfore, create an index.htmly file , with some content.
+
 * `sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html`
 
+  
+
 * Open the website URl on your browser using the ip Address or DNS name:
+  
   `http://<Public-IP-Address>:80`
+  
   OR
+  
   `http://<Public-DNS-Name>:80`
+  
   Note: You can leave this index.html page as a landing page for your application, until you create an index.php page.
   But remember to remove the index.html from the web root, after creating the index.php, because it will take prcedence over the index.php file by default. 
 
