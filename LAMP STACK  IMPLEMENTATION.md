@@ -203,6 +203,7 @@ paste the below:
 * to show the new files in the site-available directory, use the command:
   `$ sudo ls /etc/apache2/sites-available`
   
+you will see:  
 000-default.conf  default-ssl.conf  projectlamp.conf
 * To enabel the new virtual host:
   
