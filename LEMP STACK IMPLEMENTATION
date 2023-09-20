@@ -1,1 +1,55 @@
-yyyEEAHHH
+### LEMP STACK IMPLEMENTATION
+LEMP STACK is another webstack just like LAMP.
+L - Linux
+E - Nginx
+M - Mysql
+P - PHP/Python
+
+This is to show or explained how i implemented a lamp stack.
+SO, to implement this stack we need the elements mentioned above. Note that an EC2 instance running on Ubuntu has been created already. 
+You can refer to previous project (LAMP Implementation) on how i created EC2 instance.
+
+Step 1:  I installed Nginx with the command below:
+but before insstalling nginx, i updated my ubuntu 
+* `sudo apt upgrade`,
+then,
+* `sudo apt install nginx -y`
+
+after installing nginx,
+Then, i checked if nginx is active and runnning by using the command below:
+* `sudo sytemctl status nginx`
+
+You would see it active, refer to screenshot below:
+
+![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/dfac8e44-a458-4c3e-897b-641a2ee92497)
+
+
+You can verify by using the curl command below on my ubuntu shell:
+
+* `curl http://localhost:80`
+
+or
+
+* `curl http://52.203.53.164 `
+
+Also, i very on my browser to check if i can access the server, by:
+* `http://52.203.53.164:80`
+
+
+
+![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/84225164-ac5f-4cde-bd3e-0e56dedcac66)
+
+
+note that, by default web browser listens to port 80, if i didnt specify the port number, my server would still be accessed.
+
+To check for the Server public Ip address, without going through aws console, I use the command below:
+
+* `curl -s http://169.254.169.254/latest/meta-data/public-ipv4`
+
+Step 2: Install Mysql
+
+After installation of nginx, then i installed mysql with the command below:
+
+* `sudo apt install mysql-server -y`
+
+
