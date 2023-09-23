@@ -52,4 +52,26 @@ After installation of nginx, then i installed mysql with the command below:
 
 * `sudo apt install mysql-server -y`
 
+Then I can connect to the mysql database server as the admnistrative root. using the command below:
+* `sudo mysql`
+Note that, it is not advisable to connect to the database without security meaures.
+So, I set security measure by using the command below in the database environment:
+
+*`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`
+
+I exited the database environment and then set a password depending on the level I want using the command below and then follow prompted instructions:
+
+* `sudo mysql-secure-installation`
+
+After setting the password, I can now login to the mysql database environment with password set.
+
+* `sudo msql -p`
+
+Walllaahh!... MYSQL Database is now properly installed. Then I moved to install PHP.
+
+
+### Step 4: Installing PHP.
+
+
+
 
