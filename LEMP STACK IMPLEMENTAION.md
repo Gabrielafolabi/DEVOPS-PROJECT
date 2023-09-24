@@ -96,6 +96,8 @@ Then i create the server block with the configuration below:
 $ `sudo vi /etc/nginx/sites-available/projectLEMP`
 The command above opened an empty file, then paste the below config.
 
+
+
   server {
     listen 80;
     server_name projectLEMP www.projectLEMP;
@@ -162,7 +164,10 @@ From the web root directory, i added a php file.
 * `vi var/www/ProjectLEMP/index.php`
 
   see the php code:
-  <?php
+
+
+   <?php
+  
 phpinfo();
 
 
