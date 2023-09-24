@@ -180,3 +180,31 @@ Then you can access the page on your browser with the command below:
 
 *  `$ sudo rm /var/www/your_domain/info.php`
 
+
+### Retrieving Data From Mysql Database with PHP
+
+I will first of all create a database , and a user to access the database, and then create some datas stored in the database created. After which the datas will br retrieved with PHP from the database.
+
+step 1: creating database with name example_database
+
+* `mysql> sudo CREATE DATABASE example_datase;`
+
+step 2: I created a user with a password:
+* `mysql>  CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`
+
+step 3: Give the user permission to the database created
+
+* `mysql> GRANT ALL ON example_database.* TO 'example_user'@'%';`
+
+then exit; `mysql> exit`
+
+Then try to login to with the new user login:
+* `mysql> sudo -u example_database -p`
+
+then show the database:
+* `mysql> SHOW DATABASES;`
+
+
+
+
+
