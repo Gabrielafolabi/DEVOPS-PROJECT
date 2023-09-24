@@ -93,34 +93,35 @@ Then i created a configuration file in the nginix site-available directory. usin
   
 Then i create the server block with the configuration below:
 
-`sudo vi /etc/nginx/sites-available/projectLEMP`
+$ `sudo vi /etc/nginx/sites-available/projectLEMP`
+The command above opened an empty file, then paste the below config.
 
-`server {
+  server {
     listen 80;
     server_name projectLEMP www.projectLEMP;
-    root /var/www/projectLEMP;`
+    root /var/www/projectLEMP;
 
-    index index.html index.htm index.php;
+  index index.html index.htm index.php;
 
-    location / {
+  location / {
         try_files $uri $uri/ =404;
     }
 
-    location ~ \.php$ {
+  location ~ \.php$ {
         include snippets/fastcgi-php.conf;
         fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
      }
 
-    location ~ /\.ht {
+  location ~ /\.ht {
         deny all;
     }
 
-`}`
+}
 
 
 
-Then after creating this, I link the PrjectLEMP directory i created inside the site-available with the site enabled.
-Note that, linking it implies that the correction i make on my code in site available will automatically reflect on site-enabled...
+Then after creating this, I linked the PrjectLEMP directory i created inside the site-available with the site enabled.
+Note that, linking it implies that the correction i make on my code in site available will automatically reflect on site-enabled, going forward...
 I linked it with the command below:
 
 
@@ -136,5 +137,46 @@ Then I disbaled the default nginix host that is already configure.:
 Then reload the server for changes to take effect:
 
 * `$ sudo systemctl reload nginx`
-* 
-  
+
+
+Now , My ProjectLEMP directory is empty in my web root directory var/www/ProjectLEMP.
+
+Then, i created an index.html in this directory and writing using echo.
+
+
+* `$ sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html`
+
+  Then, checked if the index.html can be access via my browser...:
+*  `http://54.80.255.231:80`
+
+ Note: remember to remove or rename the file, if you have index.php. Meanwhile Index.html will take precedence. 
+
+
+#### Testing PHP with Nginx
+
+From the web root directory, i added a php file.
+
+* `$ sudo var/www/PrejectLEMP/index.php`
+
+  Then i opened it to paste the php code:
+* `vi var/www/ProjectLEMP/index.php`
+
+  see the php code:
+  <?php
+phpinfo();
+
+
+Then you can access the page on your browser with the command below:
+
+* `[http://54.80.255.231:80/info.php`
+
+  Then you will see the page below:
+
+  ![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/71d75bc8-f717-45a4-bc41-959b261a53e2)
+
+
+
+  to remove the file, you can use:
+
+*  `$ sudo rm /var/www/your_domain/info.php`
+
