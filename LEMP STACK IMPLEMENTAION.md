@@ -205,6 +205,90 @@ then show the database:
 * `mysql> SHOW DATABASES;`
 
 
+  Output
++--------------------+
+| Database           |
++--------------------+
+| example_database   |
+| information_schema |
++--------------------+
+2 rows in set (0.000 sec)
+
+
+
+Then i created a todo list sitting on the example_database:
+
+* `CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));`
+
+Then insert a few rows into the table created.
+
+* `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");`
+* `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My second important item");`
+* `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My third important item");`
+* `mysql> INSERT INTO example_database.todo_list (content) VALUES ("and this one more thing");`
+
+Then check the datas if stored.
+* `mysql>  SELECT * FROM example_database.todo_list;`
+
+You will see below:
+Output
++---------+--------------------------+
+| item_id | content                  |
++---------+--------------------------+
+|       1 | My first important item  |
+|       2 | My second important item |
+|       3 | My third important item  |
+|       4 | and this one more thing  |
++---------+--------------------------+
+4 rows in set (0.000 sec)
+
+Then exit from mysql console
+* `mysql> exit`
+
+step 4: Create a PHP script to fetch the data from Mysql database and displayed.
+
+first create the php file from the web root directory.
+* `$ nano /var/www/projectLEMP/todo_list.php`
+
+  then use the code below:
+
+  <?php
+$user = "example_user";
+$password = "PassWord.1";
+$database = "example_database";
+$table = "todo_list";
+
+try {
+  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+  echo "<h2>TODO</h2><ol>";
+  foreach($db->query("SELECT content FROM $table") as $row) {
+    echo "<li>" . $row['content'] . "</li>";
+  }
+  echo "</ol>";
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
+
+
+
+Thereafter, save and close the file...and then access this from your browser with the URL
+* `http://54.80.255.231/todo_list.php`
+
+  You will see this below:
+
+
+![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/0ddd9fd8-1b8d-4885-950b-082e3db9aaaf)
+
+  
+
+
+
+
+
+
+
+
 
 
 
