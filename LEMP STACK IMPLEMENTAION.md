@@ -172,7 +172,11 @@ Then you can access the page on your browser with the command below:
 
   Then you will see the page below:
 
+
+
+
   ![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/71d75bc8-f717-45a4-bc41-959b261a53e2)
+
 
 
 
@@ -205,14 +209,13 @@ then show the database:
 * `mysql> SHOW DATABASES;`
 
 
-  Output
-+--------------------+
-| Database           |
-+--------------------+
-| example_database   |
-| information_schema |
-+--------------------+
-2 rows in set (0.000 sec)
+
+
+
+![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/21258bcf-80c4-42ce-ab7b-d3571b80b903)
+
+
+
 
 
 
@@ -231,16 +234,11 @@ Then check the datas if stored.
 * `mysql>  SELECT * FROM example_database.todo_list;`
 
 You will see below:
-Output
-+---------+--------------------------+
-| item_id | content                  |
-+---------+--------------------------+
-|       1 | My first important item  |
-|       2 | My second important item |
-|       3 | My third important item  |
-|       4 | and this one more thing  |
-+---------+--------------------------+
-4 rows in set (0.000 sec)
+
+
+![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/88fc21d4-89d3-43f8-8321-e096ad10aa49)
+
+
 
 Then exit from mysql console
 * `mysql> exit`
