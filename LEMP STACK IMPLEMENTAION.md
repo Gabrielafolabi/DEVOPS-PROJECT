@@ -71,3 +71,70 @@ Walllaahh!... MYSQL Database is now properly installed. Then I moved to install 
 
 
 ### Step 4: Installing PHP.
+
+
+Installed PHP with the command:
+* `sudo apt install php-fpm php-mysql`
+
+Then i checked the version installed with the command:
+* `php -v`
+
+  ### Configuring Nginx to use PHP processor
+I Create the root web directory for the domain ProjectLemp
+* `sudo mkdir var/www/ProjectLEMP`
+
+Then i changed the ownership of the directory from root user to  current system user, using the $USER environment variable.
+
+* `sudo chown -R $USER: $USER /var/www/ProjectLEMP`
+
+Then i created a configuration file in the nginix site-available directory. using the command below:
+
+* `sudo mkdir etc/nginix/site-available/ProjectLEMP`
+  
+Then i create the server block with the configuration below:
+
+`sudo vi /etc/nginx/sites-available/projectLEMP`
+
+`server {
+    listen 80;
+    server_name projectLEMP www.projectLEMP;
+    root /var/www/projectLEMP;`
+
+    index index.html index.htm index.php;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+     }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+`}`
+
+
+
+Then after creating this, I link the PrjectLEMP directory i created inside the site-available with the site enabled.
+Note that, linking it implies that the correction i make on my code in site available will automatically reflect on site-enabled...
+I linked it with the command below:
+
+
+* `$ sudo ln -s etc/nginx/site-available/ProjectLEMP etc/nginx/site-enabled`
+
+Then I checked if my configuration is okay with the command below:
+* `$ sudo nginx -t`
+
+Then I disbaled the default nginix host that is already configure.:
+
+* `$ sudo unlink /etc/nginx/sites-enabled/default`
+
+Then reload the server for changes to take effect:
+
+* `$ sudo systemctl reload nginx`
+* 
+  
