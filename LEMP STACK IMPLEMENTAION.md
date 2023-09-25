@@ -1,8 +1,13 @@
 ### LEMP STACK IMPLEMENTATION
+
 LEMP STACK is another webstack just like LAMP.
+
 L - Linux
+
 E - Nginx
+
 M - Mysql
+
 P - PHP/Python
 
 This is to show or explained how i implemented a lamp stack.
@@ -93,7 +98,8 @@ Then i created a configuration file in the nginix site-available directory. usin
   
 Then i create the server block with the configuration below:
 
-$ `sudo vi /etc/nginx/sites-available/projectLEMP`
+
+`$ sudo vi /etc/nginx/sites-available/projectLEMP`
 The command above opened an empty file, then paste the below config.
 
 
@@ -143,10 +149,15 @@ Then reload the server for changes to take effect:
 
 Now , My ProjectLEMP directory is empty in my web root directory var/www/ProjectLEMP.
 
+
+
 Then, i created an index.html in this directory and writing using echo.
 
 
 * `$ sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html`
+
+
+
 
   Then, checked if the index.html can be access via my browser...:
 *  `http://54.80.255.231:80`
@@ -190,25 +201,41 @@ Then you can access the page on your browser with the command below:
 *  `$ sudo rm /var/www/your_domain/info.php`
 
 
+
+
 ### Retrieving Data From Mysql Database with PHP
 
 I will first of all create a database , and a user to access the database, and then create some datas stored in the database created. After which the datas will br retrieved with PHP from the database.
+
+
 
 step 1: creating database with name example_database
 
 * `mysql> sudo CREATE DATABASE example_datase;`
 
+
+
+
 step 2: I created a user with a password:
 * `mysql>  CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`
+
+
+
 
 step 3: Give the user permission to the database created
 
 * `mysql> GRANT ALL ON example_database.* TO 'example_user'@'%';`
 
+
+
 then exit; `mysql> exit`
 
-Then try to login to with the new user login:
+
+
+Then try to login  with the new user login:
 * `mysql> sudo -u example_database -p`
+
+  
 
 then show the database:
 * `mysql> SHOW DATABASES;`
@@ -228,12 +255,17 @@ Then i created a todo list sitting on the example_database:
 
 * `CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));`
 
+
+
 Then insert a few rows into the table created.
 
 * `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");`
 * `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My second important item");`
 * `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My third important item");`
 * `mysql> INSERT INTO example_database.todo_list (content) VALUES ("and this one more thing");`
+
+
+
 
 Then check the datas if stored.
 * `mysql>  SELECT * FROM example_database.todo_list;`
@@ -255,6 +287,8 @@ first create the php file from the web root directory.
 
   then use the code below:
 
+
+
   <?php
 $user = "example_user";
 $password = "PassWord.1";
@@ -263,7 +297,7 @@ $table = "todo_list";
 
 try {
   $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
-  echo "<h2>TODO</h2><ol>";
+  echo "<h2> TODO </h2><ol>";
   foreach($db->query("SELECT content FROM $table") as $row) {
     echo "<li>" . $row['content'] . "</li>";
   }
@@ -275,10 +309,13 @@ try {
 
 
 
+
 Thereafter, save and close the file...and then access this from your browser with the URL
 * `http://54.80.255.231/todo_list.php`
 
   You will see this below:
+
+
 
 
 ![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/0ddd9fd8-1b8d-4885-950b-082e3db9aaaf)
