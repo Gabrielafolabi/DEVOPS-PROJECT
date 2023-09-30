@@ -107,7 +107,126 @@ it is defined as seen below,
 
 `greet "John"`
 
+
+### Creating A Shell Script:
+
+`#!/bin/bash`
+
+`# Prompt the user for their name`
+
+`echo "Enter your name:"`
+
+`read name`
+
+`# Display a greeting with the entered name`
+
+`echo "Hello, $name! Nice to meet you."`
+
+The shell script above saved in a file name "user-input.sh"
+
+1.Prompt you for your name...,
+
+2.Gets the name, and then
+
+3. Display a greeting on your terminal with the entered name.
+
+Additionally, I saved the file and then gave it executable permission with the command below:
+
+`$ sudo chmod +x user-input.sh`
+
+Then i run the script using the command:
+`$ ./user-input.sh`
+
+
+   ### Directory Manipulation and Navigation
+
+*  I wrote a shell script below that performs the following executions.
    
+   1. Dissplays the current directory
+   2. Create a new directory called "my_directory"
+   3. Change to that directory and create two files in that directory.
+   4. List the files and move one back level up
+   5. remove the "my_directory" and its content
+   6. Finally lsits the files in the current directory again.
+ 
+
+`#!/bin/bash`
+
+`# Display current directory`
+
+`echo "Current directory: $PWD"`
+
+
+
+* `# Create a new directory`
+
+`echo "Creating a new directory..."`
+
+`mkdir my_directory`
+
+`echo "New directory created."`
+
+
+
+
+
+* `# Change to the new directory`
+
+`echo "Changing to the new directory..."`
+
+`cd my_directory`
+
+`echo "Current directory: $PWD"`
+
+
+
+
+* `# Create some files`
+
+`echo "Creating files..."`
+
+`touch file1.txt`
+
+`touch file2.txt`
+
+`echo "Files created."`
+
+
+
+
+
+* `# List the files in the current directory`
+
+`echo "Files in the current directory:"`
+
+`ls`
+
+
+* `# Move one level up`
+
+`echo "Moving one level up..."`
+
+`cd ..`
+
+`echo "Current directory: $PWD"`
+
+* `# Remove the new directory and its contents`
+  
+`echo "Removing the new directory..."`
+
+`rm -rf my_directory`
+
+`echo "Directory removed."`
+
+* `# List the files in the current directory again`
+  
+`echo "Files in the current directory:"`
+
+`ls`
+
+  
+
+      
 
  
  
