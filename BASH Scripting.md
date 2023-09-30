@@ -407,6 +407,83 @@ Filename : Calculation.sh
 `echo "Square root of number 2: $square_root"`
 
 
+Note: To make the file executable `$ sudo chmod + x calculation.sh`
+To run the script: `$ ./calculation.sh`
+
+
+
+
+
+
+
+### File Backup TimeStamping
+
+The script below does the following:
+1. Defines the source directory and backup directory path
+2. Create time stamp using the current date and time
+3. Create a backup directory with the timestamp appended to its name
+4. Then the script copies all file from the source directory to the backup directory using the cp command and the r option for reursive copying
+5. displays a message, idicating the completion of the backup process and show the path of the backup directory with the timestamp
+
+
+Filename: backup.sh
+
+
+
+
+`#!/bin/bash`
+
+
+
+`# Define the source directory and backup directory`
+
+`source_dir="/path/to/source_directory"`
+
+`backup_dir="/path/to/backup_directory"`
+
+
+
+
+`# Create a timestamp with the current date and time`
+
+
+
+`timestamp=$(date +"%Y%m%d%H%M%S")`
+
+
+
+
+`# Create a backup directory with the timestamp`
+
+
+
+`backup_dir_with_timestamp="$backup_dir/backup_$timestamp"`
+
+
+
+
+`# Create the backup directory`
+
+
+`mkdir -p "$backup_dir_with_timestamp"`
+
+
+
+
+`# Copy all files from the source directory to the backup directory`
+
+
+`cp -r "$source_dir"/* "$backup_dir_with_timestamp"`
+
+
+
+`# Display a message indicating the backup process is complete`
+
+`echo "Backup completed. Files copied to: $backup_dir_with_timestamp"`
+
+
+
+
 
 
   
