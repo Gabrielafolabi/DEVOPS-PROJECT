@@ -47,8 +47,12 @@ Example:
 `#!/bin/bash`
 
 `for [ (i = 1; i <= 5; i++) ]`
+
+
   `do`
-    `echo $i`
+
+    echo $i
+    
   `done`
 
 The result of the above code is seen below:
@@ -62,6 +66,50 @@ The result of the above code is seen below:
 Example:
 
 current_date= `date +%Y-%m-%d`
+
+4. Input and output
+
+   Example 1: Accept user input
+   `echo "Enter your name?: "`
+   
+   `read name`
+   
+ Example 2: Output text to the terminal
+ 
+ `echo "Hello World"`
+
+ Example 2: Output the result of a command into a file
+
+ `echo "hello world" > index.txt`
+
+ Example 3: Pass the content of a file as input to a command.
+
+ `grep "pattern" < input.txt`
+
+Example 4: Pass the result of a command as an input to another command
+
+`echo "hello world" | grep "pattern"` 
+
+
+5. Functions: Here i created functions using the bash script. I defined and used the function to group some commands to be executed for specific purposes.
+it is defined as seen below,
+
+`#!/bin/bash`
+
+`# Define a function to greet the user`
+`greet() {`
+
+    `echo "Hello, $1! Nice to meet you."`
+`}`
+
+`# Call the greet function and pass the name as an argument`
+
+`greet "John"`
+
+   
+
+ 
+ 
 
 
   
