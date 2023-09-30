@@ -321,6 +321,92 @@ Filename: sorting.sh
 `cat sorted_files_sorted_alphabetically.txt`
 
 
+Note: `$ sudo chmod + x sorting.sh`
+
+Run the script with: `$ ./sorting.sh`
+
+
+
+### Working with Numbers and Calculation
+
+I wrote a shell script that does the following below:
+
+1. Defines two variables num1 and num2 with numeric values
+2. Perform basic arithmetic operations ( +, - , multiplication, division and modulus), then displays the result)
+3. Raising num1 to the power of two
+4. Square root of num2 and displaying the result
+
+Filename : Calculation.sh
+
+
+`#!/bin/bash`
+
+
+
+`# Define two variables with numeric values`
+
+
+`num1=10`
+
+`num2=5`
+
+
+
+
+`# Perform basic arithmetic operations`
+
+`sum=$((num1 + num2))`
+
+`difference=$((num1 - num2))`
+
+
+`product=$((num1 * num2))`
+
+
+`quotient=$((num1 / num2))`
+
+
+`remainder=$((num1 % num2))`
+
+
+
+
+`# Display the results`
+
+
+`echo "Number 1: $num1"`
+
+`echo "Number 2: $num2"`
+
+`echo "Sum: $sum"`
+
+`echo "Difference: $difference"`
+
+`echo "Product: $product"`
+
+`echo "Quotient: $quotient"`
+
+`echo "Remainder: $remainder"`
+
+
+
+
+`# Perform some more complex calculations`
+
+`power_of_2=$((num1 ** 2))`
+
+`square_root=$(awk "BEGIN{ sqrt=$num2; print sqrt }")`
+
+
+
+
+`# Display the results`
+
+`echo "Number 1 raised to the power of 2: $power_of_2"`
+
+`echo "Square root of number 2: $square_root"`
+
+
 
 
   
