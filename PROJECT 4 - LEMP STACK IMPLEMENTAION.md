@@ -104,7 +104,7 @@ The command above opened an empty file, then paste the below config.
 
 
 
-  server {
+ > server {
     listen 80;
     server_name projectLEMP www.projectLEMP;
     root /var/www/projectLEMP;
