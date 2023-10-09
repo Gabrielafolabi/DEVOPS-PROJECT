@@ -6,14 +6,18 @@ In their communication, each machine as its own role. The machine sending reques
 
 See the screenshot below:
 
+
 ![Alt text](Images/client_server.PNG)
+
 
 In the diagram above, the machine that is trying to access a web site using the web browser or a curl command is referred to as the client. It sends an HTTP request to a web server (Nginx, Apache IIS etc)
 over the internet.
 
 The diagram below explains when Database is added.
 
+
 ![Alt text](<Images/Server with database.PNG>)
+
 
 In this case above, the web server fuctions as a client server, because it connects and read/writes to/from a database server, and the communication happens between them over a local network or the internet.
 But it is common practice to place web server and DB server in the same local network.
