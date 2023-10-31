@@ -37,7 +37,7 @@ or
 
 * `curl http://52.203.53.164 `
 
-Also, i very on my browser to check if i can access the server, by:
+Also, i verify on my browser to check if i can access the server, by:
 * `http://52.203.53.164:80`
 
 
@@ -58,7 +58,10 @@ After installation of nginx, then i installed mysql with the command below:
 * `sudo apt install mysql-server -y`
 
 Then I can connect to the mysql database server as the admnistrative root. using the command below:
+
+
 * `sudo mysql`
+
 Note that, it is not advisable to connect to the database without security meaures.
 So, I set security measure by using the command below in the database environment:
 
@@ -85,25 +88,36 @@ Then i checked the version installed with the command:
 * `php -v`
 
   ### Configuring Nginx to use PHP processor
+
+
 I Create the root web directory for the domain ProjectLemp
+
 * `sudo mkdir var/www/ProjectLEMP`
+
 
 Then i changed the ownership of the directory from root user to  current system user, using the $USER environment variable.
 
+
 * `sudo chown -R $USER: $USER /var/www/ProjectLEMP`
+
 
 Then i created a configuration file in the nginix site-available directory. using the command below:
 
+
 * `sudo mkdir etc/nginix/site-available/ProjectLEMP`
-  
+
+
 Then i create the server block with the configuration below:
 
 
 `$ sudo vi /etc/nginx/sites-available/projectLEMP`
+
+
+
 The command above opened an empty file, then paste the below config.
 
 
-
+```
  > server {
     listen 80;
     server_name projectLEMP www.projectLEMP;
@@ -126,7 +140,7 @@ The command above opened an empty file, then paste the below config.
 
 }
 
-
+```
 
 Then after creating this, I linked the PrjectLEMP directory i created inside the site-available with the site enabled.
 Note that, linking it implies that the correction i make on my code in site available will automatically reflect on site-enabled, going forward...
@@ -135,14 +149,19 @@ I linked it with the command below:
 
 * `$ sudo ln -s etc/nginx/site-available/ProjectLEMP etc/nginx/site-enabled`
 
+
 Then I checked if my configuration is okay with the command below:
 * `$ sudo nginx -t`
 
+
 Then I disbaled the default nginix host that is already configure.:
+
 
 * `$ sudo unlink /etc/nginx/sites-enabled/default`
 
+
 Then reload the server for changes to take effect:
+
 
 * `$ sudo systemctl reload nginx`
 
@@ -154,37 +173,52 @@ Now , My ProjectLEMP directory is empty in my web root directory var/www/Project
 Then, i created an index.html in this directory and writing using echo.
 
 
-* `$ sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html`
+```
+* $ sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
 
-
-
+```
 
   Then, checked if the index.html can be access via my browser...:
 *  `http://54.80.255.231:80`
+
+
 
  Note: remember to remove or rename the file, if you have index.php. Meanwhile Index.html will take precedence. 
 
 
 #### Testing PHP with Nginx
 
+
 From the web root directory, i added a php file.
+
+
 
 * `$ sudo var/www/PrejectLEMP/index.php`
 
+
+
+
   Then i opened it to paste the php code:
+
+
 * `vi var/www/ProjectLEMP/index.php`
+
 
   see the php code:
 
-
+```
    <?php
   
 phpinfo();
+
+```
 
 
 Then you can access the page on your browser with the command below:
 
 * `[http://54.80.255.231:80/info.php`
+
+
 
   Then you will see the page below:
 
@@ -197,6 +231,7 @@ Then you can access the page on your browser with the command below:
 
 
   to remove the file, you can use:
+
 
 *  `$ sudo rm /var/www/your_domain/info.php`
 
@@ -217,12 +252,15 @@ step 1: creating database with name example_database
 
 
 step 2: I created a user with a password:
+
+
 * `mysql>  CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`
 
 
 
 
 step 3: Give the user permission to the database created
+
 
 * `mysql> GRANT ALL ON example_database.* TO 'example_user'@'%';`
 
@@ -233,11 +271,15 @@ then exit; `mysql> exit`
 
 
 Then try to login  with the new user login:
+
+
 * `mysql> sudo -u example_database -p`
 
   
 
 then show the database:
+
+
 * `mysql> SHOW DATABASES;`
 
 
@@ -253,21 +295,30 @@ then show the database:
 
 Then i created a todo list sitting on the example_database:
 
-* `CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));`
+
+*
+ ```
+CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));
+
+```
 
 
 
 Then insert a few rows into the table created.
 
-* `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");`
-* `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My second important item");`
-* `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My third important item");`
-* `mysql> INSERT INTO example_database.todo_list (content) VALUES ("and this one more thing");`
+```
+* mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");
+* mysql> INSERT INTO example_database.todo_list (content) VALUES ("My second important item");
+* mysql> INSERT INTO example_database.todo_list (content) VALUES ("My third important item");
+* mysql> INSERT INTO example_database.todo_list (content) VALUES ("and this one more thing");
 
+```
 
 
 
 Then check the datas if stored.
+
+
 * `mysql>  SELECT * FROM example_database.todo_list;`
 
 You will see below:
@@ -278,17 +329,20 @@ You will see below:
 
 
 Then exit from mysql console
+
+
 * `mysql> exit`
 
 step 4: Create a PHP script to fetch the data from Mysql database and displayed.
 
 first create the php file from the web root directory.
+
 * `$ nano /var/www/projectLEMP/todo_list.php`
 
   then use the code below:
 
 
-
+```
   <?php
 $user = "example_user";
 $password = "PassWord.1";
@@ -307,10 +361,11 @@ try {
     die();
 }
 
-
+```
 
 
 Thereafter, save and close the file...and then access this from your browser with the URL
+
 * `http://54.80.255.231/todo_list.php`
 
   You will see this below:
