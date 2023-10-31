@@ -16,44 +16,50 @@ Example:
 1. Using if-else to execute script based on a condition.
 * **Script to check if a number is positive, negative or zero**
 
+```
+#!/bin/bash
 
-`#!/bin/bash`
+read -p "Enter a number: " num
 
-`read -p "Enter a number: " num`
+if [ $num -gt 0];
 
-`if [ $num -gt 0];`
+then
 
-`then`
+  echo "The number is positive."
 
-`  echo "The number is positive."`
+elif [ $num -lt 0 ];
 
-`elif [ $num -lt 0 ];`
+then
 
-`  then`
+   echo "The number is negative"
 
-`    echo "The number is negative"`
+else 
 
-`else` 
+  echo "the number is zero."
 
-`  echo "the number is zero."`
+fi
 
-`fi`
+```
 
 **Note: The result of the code above prompt you to type a number, and then condiftions are checked which further print a statement stating the number is positive or negative or zero.**
 
 2. Interating through a list, using For Loop.
 
 * **Script to print number fro 1 to 5 using for loop**
-`#!/bin/bash`
 
-`for [ (i = 1; i <= 5; i++) ]`
+```
+#!/bin/bash
+
+for [ (i = 1; i <= 5; i++) ]
 
 
-  `do`
+do
 
     echo $i
     
-  `done`
+done
+```
+
 
 The result of the above code is seen below:
 
@@ -94,33 +100,40 @@ Example 4: Pass the result of a command as an input to another command
 5. Functions: Here i created functions using the bash script. I defined and used the function to group some commands to be executed for specific purposes.
 it is defined as seen below,
 
-`#!/bin/bash`
+```
 
-`# Define a function to greet the user`
+#!/bin/bash
 
-`greet() {`
+# Define a function to greet the user
 
-    `echo "Hello, $1! Nice to meet you."`
-`}`
+greet() {
 
-`# Call the greet function and pass the name as an argument`
+    echo "Hello, $1! Nice to meet you."
+}
 
-`greet "John"`
+# Call the greet function and pass the name as an argument
 
+greet "John"
+
+```
 
 ### Creating A Shell Script:
 
-`#!/bin/bash`
 
-`# Prompt the user for their name`
+```
+#!/bin/bash
 
-`echo "Enter your name:"`
+# Prompt the user for their name
 
-`read name`
+echo "Enter your name:"
 
-`# Display a greeting with the entered name`
+read name
 
-`echo "Hello, $name! Nice to meet you."`
+# Display a greeting with the entered name
+
+echo "Hello, $name! Nice to meet you."`
+```
+
 
 The shell script above saved in a file name "user-input.sh"
 
@@ -138,6 +151,8 @@ Then i run the script using the command:
 `$ ./user-input.sh`
 
 
+
+
    ### Directory Manipulation and Navigation
 
 *  I wrote a shell script below that performs the following executions.
@@ -152,80 +167,83 @@ Then i run the script using the command:
    6. Finally lsits the files in the current directory again.
  
 
-`#!/bin/bash`
 
-`# Display current directory`
+```
 
-`echo "Current directory: $PWD"`
+#!/bin/bash
 
+# Display current directory
 
-
-* `# Create a new directory`
-
-`echo "Creating a new directory..."`
-
-`mkdir my_directory`
-
-`echo "New directory created."`
+echo "Current directory: $PWD"
 
 
 
+# Create a new directory
 
+echo "Creating a new directory..."
 
-* `# Change to the new directory`
+mkdir my_directory
 
-`echo "Changing to the new directory..."`
-
-`cd my_directory`
-
-`echo "Current directory: $PWD"`
-
-
-
-
-* `# Create some files`
-
-`echo "Creating files..."`
-
-`touch file1.txt`
-
-`touch file2.txt`
-
-`echo "Files created."`
+echo "New directory created."
 
 
 
 
 
-* `# List the files in the current directory`
+# Change to the new directory
 
-`echo "Files in the current directory:"`
+echo "Changing to the new directory..."
 
-`ls`
+cd my_directory
+
+echo "Current directory: $PWD"
 
 
-* `# Move one level up`
 
-`echo "Moving one level up..."`
 
-`cd ..`
+# Create some files
 
-`echo "Current directory: $PWD"`
+echo "Creating files..."
 
-* `# Remove the new directory and its contents`
+touch file1.txt
+
+touch file2.txt
+
+echo "Files created."
+
+
+
+
+
+# List the files in the current directory
+
+echo "Files in the current directory:"
+
+ls
+
+
+# Move one level up
+
+echo "Moving one level up..."
+
+cd ..
+
+echo "Current directory: $PWD"
+
+# Remove the new directory and its contents
   
-`echo "Removing the new directory..."`
+echo "Removing the new directory..."
 
-`rm -rf my_directory`
+rm -rf my_directory
 
-`echo "Directory removed."`
+echo "Directory removed."
 
-* `# List the files in the current directory again`
+# List the files in the current directory again
   
-`echo "Files in the current directory:"`
+echo "Files in the current directory:"
 
-`ls`
-
+ls
+```
 Note: File was saved and give execution permission `$ chmod + x navigating-linux-filesystem.sh`
 
 Then, i run the script using `$ ./ navigating-linux-filesystem.sh`
