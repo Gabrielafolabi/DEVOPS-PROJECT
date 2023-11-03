@@ -57,9 +57,31 @@ sudo systemctl restart apache2
 
 ```
 
-So, to run the script, use the steps below:
+So, to run the script, I used the steps below:
 
-1) Provision an EC2 instance running ubuntu 20.4. You can refer to my previous project to know how they.
+1) I Provisioned an EC2 instance running ubuntu 20.4. You can refer to my previous project on how to provision a server on AWS.
+2) I Opened port 8000, under the security group to allow traffic from anywhere
+3) I Connected to the web server via ssh on any desired terminal(Git bash, Termius, VSCODE etc). Here i used Termius.
+4) Then I executed  the script above. By opeining a file, pasting the script. 
+
+See below command for step 4
+
+`sudo vi install.sh`
+
+paste the script above in this opened file, then save and close the file with the command after using `esc`.
+You save and close with `shift + :wqa!`
+
+5) Change the  permission of the file to make it executable.
+
+`sudo chmod +x install.sh`
+
+6) The Run the shell script using the command below:
+
+`./install.sh Public_ip`
+
+
+
+
 
 
 
