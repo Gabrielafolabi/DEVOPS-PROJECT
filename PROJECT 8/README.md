@@ -193,7 +193,7 @@ This will be exactly like this below:
 ### VERIFYING THE SET UP
 
 
-
+![Alt text](image.png)
 
 
 
