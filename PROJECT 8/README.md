@@ -88,9 +88,11 @@ You save and close with `shift + :wqa!`
 
 
 
-6) The Run the shell script using the command below:
+6) The Run the shell script using the command below for both servers:
 
-`./install.sh PUBLIC_IP`
+`./install.sh 54.89.104.163`
+
+`./install.sh 35.153.132.173` 
 
 
 
@@ -180,6 +182,11 @@ Step 4: Change the permission for the file to be executed
 Step 5: Then run the file as below:
 
 `./nginx.sh PUBLIC_IP webserver-1 webserver-2`
+
+This will be exactly like this below:
+
+
+`./nginx.sh 54.159.109.168 54.89.104.163:8000 35.153.132.173:8000`
 
 
 
