@@ -87,3 +87,17 @@ Then;
 check the available partitions
 
 * `sudo lvmdiskscan`
+
+
+Step 6: Then we have to mark these three disks as physical volume, for them to be recognised and used as LVM.
+
+Use the `pvcreate` utility
+
+
+```
+sudo pvcreate /dev/xvdf1
+sudo pvcreate /dev/xvdg1
+sudo pvcreate /dev/xvdh1
+
+```
+
