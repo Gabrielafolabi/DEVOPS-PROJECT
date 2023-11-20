@@ -86,7 +86,22 @@ Then;
 
 check the available partitions
 
+
+* `sudo lsblk`
+
+
+
+![Alt text](image-5.png)
+
+
+
+
 * `sudo lvmdiskscan`
+
+
+![Alt text](image-6.png)
+
+
 
 
 Step 6: Then we have to mark these three disks as physical volume, for them to be recognised and used as LVM.
