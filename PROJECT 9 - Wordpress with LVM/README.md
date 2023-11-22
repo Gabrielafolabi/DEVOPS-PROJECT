@@ -326,17 +326,34 @@ Step 4: Configure Database to work with wordpress.
 ```
 sudo mysql
 CREATE DATABASE wordpress;
-CREATE USER `myuser`@`<Web-Server-Private-IP-Address>` IDENTIFIED BY 'mypass';
-GRANT ALL ON wordpress.* TO 'myuser'@'<Web-Server-Private-IP-Address>';
+CREATE USER `myuser`@`34.207.218.75` IDENTIFIED BY 'mypass';
+GRANT ALL ON wordpress.* TO 'myuser'@'34.207.218.75';
 FLUSH PRIVILEGES;
 SHOW DATABASES;
 exit
 
 ```
 
-Step 5: Configure wordpress to connect t remote database
+Step 5: Configure wordpress to connect to remote database
 
+I opened mySQL port 3306 on the Database server. Allowing the Ip address of only the webserver.
 
+Step 6: Install MYSQL client on the webserver, to ensure you can connect to the Mysql server from the 
+Webserver.
+
+```
+sudo yum install mysql
+sudo mysql -u admin -p -h <DB-Server-Private-IP-address>
+
+```
+
+1) Then verify if you can execute `SHOW DATABASES;` command and see a list of existing databases.
+
+2) Change permission and configuration so Apache could use wordpress.
+3) Enable TCP port 80. and allowing ip from anywhere.
+4) Then access the wordpress from your browser with link 
+
+* `http://34.207.218.75/wordpress/`
 
 
 
