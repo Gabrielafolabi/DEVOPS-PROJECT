@@ -116,3 +116,92 @@ sudo pvcreate /dev/xvdh1
 
 ```
 
+use `sudo pvs` to check the physical volumes created.
+
+
+![Alt text](image-7.png)
+
+
+step 7: We create a volume group and then add all the physical volumes created to the VG. 
+
+The VG is named **webdata-vg**
+
+* `sudo vgcreate webdata-vg /dev/xvdf1 /dev/xvdg1 /dev/xvdh1`
+
+
+To check the volume group created us the command below
+
+* `sudo vgs`
+
+
+step 8: Then we create 2 logical volumes of 14G each from the Volume group. apps-lv takes half of the size of the PV, logs-lv use the remaining space of the PV size.
+
+Note: apps-lv will be used to store data for the website, while logs-lv is used to store data or logs.
+
+
+create the lv with the command below:
+
+
+* `sudo lvcreate -n apps-lv -L 14G webdata-vg`
+* `sudo lvcreate -n log-lv -L 14G webdata-vg`
+
+
+to verify, do `sudo lvs`
+
+
+![Alt text](image-8.png)
+
+
+step 9: Then I make filesystem, this to to make the files to be compactiple with the normal files on the server.
+we use the command `mkfs.ext4` to format the logical volume with ext4 filesystem.
+
+* `sudo mkfs -t ext4 /dev/webdata-vg/apps-lv`
+
+* `sudo mkfs -t ext4 /dev/webdata-vg/logs-lv`
+
+step 10: Then create a /var/www/html file to store website files.
+
+* `sudo mkdir -p /var/www/html`
+
+
+step 10: Then create a /home/recovery/log file to backup log data.
+
+* `sudo mkdir -p /home/recovery/logs`
+
+step 11: Then we mount /var/www/html on the apps.lv logical volume
+
+* `sudo mount /dev/webdata-vg/apps-lv /var/www/html`
+
+step 12: Then we have to also mount /var/log on the logs-lv logical volume.
+
+But, to do this, you'll need to backup the logs in the /var/log file, because all logs on /var/log will be wiped out after mounting. Therefore to prevent this , we will backup the logs in the /home/recovery/logs file. Then take the logs back after mounting is completely done.
+
+
+Use the command below to backup the logs in /home/recovery/log
+
+* `sudo rsync -av /var/log/ . /home/recovery/logs`
+
+
+![Alt text](image-9.png)
+
+
+
+step 13: Then you can now mount the /var/log on the logs-lv
+
+* `sudo mount /dev/webdata-vg/logs-lv /var/log`
+
+
+step 14: At this point, we can now transfer back the logs earlier moved to `/home/recovery/log` back to /`var/log`
+
+
+* `sudo rsync -av /home/recovery/logs /var/log`
+
+
+
+
+
+
+
+
+
+
