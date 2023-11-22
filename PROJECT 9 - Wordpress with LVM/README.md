@@ -351,9 +351,36 @@ sudo mysql -u admin -p -h <DB-Server-Private-IP-address>
 
 2) Change permission and configuration so Apache could use wordpress.
 3) Enable TCP port 80. and allowing ip from anywhere.
-4) Then access the wordpress from your browser with link 
+ 
+
+4) cd into /var/www/html/wordpress/
+
+
+Then edit the wordpress config file 
+
+* `sudo vi wp-config.php`
+
+
+
+
+![Alt text](image-14.png)
+
+
+
+
+
+
+5) Then access the wordpress from your browser with link
+
+
+
 
 * `http://34.207.218.75/wordpress/`
+
+
+
+
+![Alt text](image-13.png)
 
 
 
