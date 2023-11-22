@@ -198,6 +198,143 @@ step 14: At this point, we can now transfer back the logs earlier moved to `/hom
 
 
 
+step 15: Update the `/etc/fstab` file, this is to make sure the mount persist.
+
+The UUID of the device will be used to update the `/etc/fstab` file.
+
+Use:
+
+* `sudo blkid` to check for the UUID of the device.
+
+
+![Alt text](image-10.png)
+
+
+step 16: To edit the, use the vi to open the /etc/fstab
+
+* `sudo vi /etc/fstab`
+
+Then put in the UUID of the devices, just like it was done below.
+
+![Alt text](image-11.png)
+
+step 17: Test configuration and reload daemon
+
+You can check the configuration with the command
+* `sudo mount -a`
+
+* `sudo systemctl daemon-reload`
+
+step 18: Verify your set up with the command below:
+
+* `df -h`
+
+![Alt text](image-12.png)
+
+
+
+### INSTALLING WORDPRESS AND CONFIGURING TO USE MYSQL DATABASE
+
+step 1: Provision a Database server, by lunching a redhat EC2 instance. Having a role "Database server".
+
+Then repeate the steps to create logical volume and then mounting it. 
+
+Instead of `apps-lv` , you create `db-lv` . Mount it on `/db` intead of `/var/www/html`
+
+
+step 2: Install wordpress on the webserver...not the database server just provisoned.
+
+1) * `sudo yum update`
+
+2) Install wget, apache and it's dependencies.
+
+* `sudo yum install wget httpd php php-mysqlnd php-fpm php-json`
+
+3) Start Apache
+
+```
+sudo systemctl enable httpd
+sudo systemctl start httpd
+
+```
+
+4) Install php and it's dependencies
+
+```
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+sudo yum install yum-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+sudo yum module list php
+sudo yum module reset php
+sudo yum module enable php:remi-7.4
+sudo yum install php php-opcache php-gd php-curl php-mysqlnd
+sudo systemctl start php-fpm
+sudo systemctl enable php-fpm
+setsebool -P httpd_execmem 1
+
+```
+
+
+5) Restart Apache
+
+* `sudo systemctl restart httpd `
+
+
+6) Download wordpress and copy wordpress to /var/www/html
+
+```
+mkdir wordpress
+cd   wordpress
+sudo wget http://wordpress.org/latest.tar.gz
+sudo tar xzvf latest.tar.gz
+sudo rm -rf latest.tar.gz
+cp wordpress/wp-config-sample.php wordpress/wp-config.php
+cp -R wordpress /var/www/html/
+
+```
+
+7) Configure SELinux policies
+
+```
+ sudo chown -R apache:apache /var/www/html/wordpress
+ sudo chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R
+ sudo setsebool -P httpd_can_network_connect=1
+
+```
+
+Step 3: Install MySQL Dabase on the new provisioned database server.
+
+```
+sudo yum update
+sudo yum install mysql-server
+
+```
+
+verify that the service is up by using 
+
+`sudo systemctl status mysqld` 
+
+if service is not up, then restart and enable it below:
+
+```
+sudo systemctl restart mysqld
+sudo systemctl enable mysqld
+
+```
+
+Step 4: Configure Database to work with wordpress.
+
+```
+sudo mysql
+CREATE DATABASE wordpress;
+CREATE USER `myuser`@`<Web-Server-Private-IP-Address>` IDENTIFIED BY 'mypass';
+GRANT ALL ON wordpress.* TO 'myuser'@'<Web-Server-Private-IP-Address>';
+FLUSH PRIVILEGES;
+SHOW DATABASES;
+exit
+
+```
+
+Step 5: Configure wordpress to connect t remote database
 
 
 
