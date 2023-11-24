@@ -47,7 +47,7 @@ Git branch helps you  to develop new features of your application without interf
 
 
   
-- You can also merge branch into branch...Say you want to we have branches "main" and "backup" , and you want to add content "backup" into  "main".
+- You can also merge branch into another branch...Say you want to have branches "main" and "backup" , and you want to add content "backup" into  "main".
   Then you first make sure you are in "main" branch and then run the command (git merge backup).
 
   ![image](https://github.com/Gabrielafolabi/DEVOPS-PROJECT/assets/35296784/41108ba8-9eb5-43af-9459-72082236079f)
