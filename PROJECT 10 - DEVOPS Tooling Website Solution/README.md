@@ -50,7 +50,9 @@ create the lv with the command below:
 
 
  `sudo lvcreate -n lv-apps -L 9G webdata-vg`
+
  `sudo lvcreate -n lv-logs -L 9G webdata-vg`
+ 
  `sudo lvcreate -n lv-opt -L 9G webdata-vg`
 
 
@@ -59,17 +61,20 @@ create the lv with the command below:
 Mount lv-apps on /mnt/apps - Used by Webserver
 
 `sudo mkdir /mnt/apps`
+
 `sudo mount /dev/webdata-vg/lv-apps /mnt/apps`
 
 Mount lv-logs on /mnt/logs - Used by webserver logs
 
 `sudo mkdir /mnt/logs`
+
 `sudo mount /dev/webdata-vg/lv-logs /mnt/logs`
 
 
 Mount lv-opt on /mnt/opt - Used by Jenkins server
 
 `sudo mkdir /mnt/opt`
+
 `sudo mount /dev/webdata-vg/lv-opt /mnt/opt`
 
 
