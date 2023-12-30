@@ -2,7 +2,7 @@
 
 In this project I prepared a storage infrastructure on two Linux servers and implemented a basic web solution using WordPress. 
 
-Wordpress is an open-source content management system written in PHP nad paired with MySQL or MariaDB as its backend Relational Database Management System (RDBMS).
+Wordpress is an open-source content management system written in PHP and paired with MySQL or MariaDB as its backend Relational Database Management System (RDBMS).
 
 This project consists of two parts:
 
@@ -23,7 +23,7 @@ Three-tire Architecture is a client-server software architecture pattern that co
 
 ### 3-Tier Setup
 
-1) Alaptop or PC to serve as a client
+1) A laptop or PC to serve as a client
 2) An EC2 Linux Server as web server (This is where you will install WordPress)
 3) An EC2 Linux server as database (DB) server.
 
@@ -74,6 +74,7 @@ like;
 
 Once you used the command above, then you follow the promptings as seen below:
 
+in the order n, 1(depending on the number of pertitions), enter, enter, enter, w, and y
 
 ![Alt text](image-3.png)
 
