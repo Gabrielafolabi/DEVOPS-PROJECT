@@ -56,14 +56,19 @@ Creating a `physical volume` and a `volume group`
 
 * . Instead of formatting the disk as ext4, it is formatted as xfs
 
+
 I used the command `mkfs.xfs` to format the logical volume with xfs filesystem.
 
  `sudo mkfs -t xfs /dev/webdata-vg/lv-apps`
 
+
+
  `sudo mkfs -t xfs /dev/webdata-vg/lv-logs`
 
+
+
  `sudo mkfs -t xfs /dev/webdata-vg/lv-opt`
- 
+
 
 * . Ensuring there are three logical volumes lv-opt, lv-apps, and lv-logs
 
@@ -72,7 +77,11 @@ create the lv with the command below:
 
  `sudo lvcreate -n lv-apps -L 9G webdata-vg`
 
+
+
  `sudo lvcreate -n lv-logs -L 9G webdata-vg`
+
+
 
  `sudo lvcreate -n lv-opt -L 9G webdata-vg`
 
@@ -81,25 +90,42 @@ create the lv with the command below:
 * . Create Mount points on /mnt directory for the logical volumes as follow:
 Mount lv-apps on /mnt/apps - Used by Webserver
 
+
+
 `sudo mkdir /mnt/apps`
+
 
 `sudo mount /dev/webdata-vg/lv-apps /mnt/apps`
 
-Mount lv-logs on /mnt/logs - Used by webserver logs
+
+Mount lv-logs on /mnt/logs - Used by webserver logs.
+
+
 
 `sudo mkdir /mnt/logs`
+
+
 
 `sudo mount /dev/webdata-vg/lv-logs /mnt/logs`
 
 
+
 Mount lv-opt on /mnt/opt - Used by Jenkins server
 
+
+
 `sudo mkdir /mnt/opt`
+
 
 `sudo mount /dev/webdata-vg/lv-opt /mnt/opt`
 
 
 4. Install NFS server, congiure it to start on reboot and make sure it is up and running.
+
+
+
+
+
 
 ```
 sudo yum -y update
@@ -108,6 +134,12 @@ sudo systemctl start nfs-server.service
 sudo systemctl enable nfs-server.service
 sudo systemctl status nfs-server.service
 ```
+
+
+
+
+
+
 
 
 ![Alt text](image-2.png)
