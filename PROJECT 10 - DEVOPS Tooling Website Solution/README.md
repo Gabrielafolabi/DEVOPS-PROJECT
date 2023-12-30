@@ -26,7 +26,10 @@ On the diagram below, we see stateless servers share a common databases and also
 Step 1: Prepare NFS Server
 
 1. Spin up a new EC2 instance with RHEL Linux 8 Operating System.
+
 2. Configure LVM on the server.
+
+
 
 Creating three volumes in  the same AZ of the NFS server provisioned.
 
@@ -35,7 +38,24 @@ Creating three volumes in  the same AZ of the NFS server provisioned.
 
 
 
+
+
+
+![Alt text](image-3.png)
+
+
+
+
+
+Creating a `physical volume` and a `volume group`
+
+
+![Alt text](image-4.png)
+
+
+
 * . Instead of formatting the disk as ext4, it is formatted as xfs
+
 I used the command `mkfs.xfs` to format the logical volume with xfs filesystem.
 
  `sudo mkfs -t xfs /dev/webdata-vg/lv-apps`
@@ -43,6 +63,7 @@ I used the command `mkfs.xfs` to format the logical volume with xfs filesystem.
  `sudo mkfs -t xfs /dev/webdata-vg/lv-logs`
 
  `sudo mkfs -t xfs /dev/webdata-vg/lv-opt`
+ 
 
 * . Ensuring there are three logical volumes lv-opt, lv-apps, and lv-logs
 
@@ -52,7 +73,7 @@ create the lv with the command below:
  `sudo lvcreate -n lv-apps -L 9G webdata-vg`
 
  `sudo lvcreate -n lv-logs -L 9G webdata-vg`
- 
+
  `sudo lvcreate -n lv-opt -L 9G webdata-vg`
 
 
