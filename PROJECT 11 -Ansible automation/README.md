@@ -32,3 +32,15 @@ check Jenkins version by running
 
 
 ![Alt text](image-2.png)
+
+
+4. Configure Jenkis build job to archive your repository content every time you change it. 
+- Create a new freestyle project `ansible` in jenkins and point it to the `ansible-config-mgt repository`
+- Confiure a webhook in Github and set the webhook to trigger `ansible` builds
+- Configure a Post-build job to save all (`**`) files.
+
+5. Test the setup by making changes in README.md file in master branch and make sure that builds starts automaticaly and jenkins saves the files (build artifacts) in following folder.
+
+
+`ls /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/`
+
