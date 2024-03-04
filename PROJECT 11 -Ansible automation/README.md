@@ -22,12 +22,12 @@ sudo apt update
 sudo apt install ansible
 ```
 
-Check ansible version by running
+#### Check ansible version by running
 `ansible --version`
 
 ![Alt text](image-1.png)
 
-check Jenkins version by running
+#### check Jenkins version by running
 `jenkins --version`
 
 
