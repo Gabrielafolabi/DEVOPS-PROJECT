@@ -25,5 +25,10 @@ sudo apt install ansible
 Check ansible version by running
 `ansible --version`
 
+![Alt text](image-1.png)
+
 check Jenkins version by running
 `jenkins --version`
+
+
+![Alt text](image-2.png)
