@@ -9,3 +9,21 @@ A jump server in the above( Sometimes refered to as Bastion Host) is an intermed
 In this project, I will developed `Ansible` scripts to simulate the use of a `jump box/Bastion host` to access Web servers.
 
 ## Install and configure Ansible Client to act as a Jump Server/Bastion Host
+Step 1: 
+1. I Installed and configured ansible on vm instance. I used Google cloud for this project.
+2. Installed `Jenkins` on the same vm instance. Update the `name` of the tag on the vm instance to be `Jenkins-Ansible`
+3. In the Github account, a new repository was created and named `ansible-config-mgt` 
+
+
+Use the command below to intall ansible
+```
+sudo apt update
+
+sudo apt install ansible
+```
+
+Check ansible version by running
+`ansible --version`
+
+check Jenkins version by running
+`jenkins --version`
