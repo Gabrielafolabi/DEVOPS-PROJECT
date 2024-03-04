@@ -44,3 +44,8 @@ sudo apt install ansible
 
 `ls /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/`
 
+<b>Note<b/>: Trigger Jenkins project execution only for main(or master) branch.
+
+
+
+![Alt text](image-3.png)
