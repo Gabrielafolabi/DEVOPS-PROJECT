@@ -44,8 +44,17 @@ sudo apt install ansible
 
 `ls /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/`
 
-<b>Note<b/>: Trigger Jenkins project execution only for main(or master) branch.
+<b>Note<b/> : Trigger Jenkins project execution only for main(or master) branch.
 
 
 
 ![Alt text](image-3.png)
+
+
+Step 2:
+- Clone down ansible-config-mgt repo to Jenkins-Ansible instance.
+In this project, i used VS code as my Integrated Development Environment(IDE)
+
+use the command below to clone down the ansible-config-mgt repo.
+
+`git clone <ansible-config-mgt repo link>`
