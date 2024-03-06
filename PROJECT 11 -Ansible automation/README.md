@@ -25,13 +25,13 @@ sudo apt install ansible
 #### Check ansible version by running
 `ansible --version`
 
-![Alt text](image-1.png)
+![Alt text](image-4.png)
 
 #### check Jenkins version by running
 `jenkins --version`
 
 
-![Alt text](image-2.png)
+![Alt text](image-5.png)
 
 
 4. Configure Jenkis build job to archive your repository content every time you change it. 
@@ -58,3 +58,13 @@ In this project, i used VS code as my Integrated Development Environment(IDE)
 use the command below to clone down the ansible-config-mgt repo.
 
 `git clone <ansible-config-mgt repo link>`
+
+
+## Begin Ansible Development
+Step 3: 
+1. In the `ansible-config-mgt` GitHub repository, create a new branch that will be used for development of a new feature.
+2. Checkout the newly created feature branch to local machine and build the code and directory structure.
+3. Create directory `playbook` to store all your playbook files
+4. Create directory `inventory` to keep hosts organised
+5. Within the palybook folder, create a playbook with name common.yml
+6. Within the inventory folder, create an inventory file for each environment(Development, Staging Testing and Production) `dev`, `staging`, `uat` and `prod` respectively. These inventory files use .ini languages style to configure Ansible hosts.
